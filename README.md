@@ -1,18 +1,18 @@
-vue
+# vue
 简单实现vue双向数据绑定
 #
-	var obj = {}
-	Object.defineProperty(obj, 'hello', {
-		get: function () {
-			console.log('get方法被调用了')
-		},
-		set: function (val) {
-			console.log('set方法被调用了，参数是' + val)
-		}
-	});
+var obj = {}
+Object.defineProperty(obj, 'hello', {
+	get: function () {
+		console.log('get方法被调用了')
+	},
+	set: function (val) {
+		console.log('set方法被调用了，参数是' + val)
+	}
+});
 
-	obj.hello;
-	obj.hello = '123'
+obj.hello;
+obj.hello = '123'
 #
 get 和 set 方法内部的 this 都指向 obj，这意味着 get 和 set 函数可以操作对象内部的值。另外，访问器属性的会"覆盖"同名的普通属性，因为访问器属性会被优先访问，与其同名的普通属性则会被忽略。
 #

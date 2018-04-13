@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<title>双向绑定</title>
+	<link rel="stylesheet" href="">
+</head>
+<body>
+	<input type="text" id="a">
+	<div id="b"></div>
+
+	<script>
+		var obj ={}
+		var a = document.getElementById('a');
+		var b = document.getElementById('b');
+
+		Object.defineProperty(obj, 'hello', {
+			
+			set: function (newValue) {
+				a.value = newValue;
+				b.innerHTML = newValue;
+			}
+
+		});
+		document.addEventListener('keyup', function (e) {
+			obj.hello = e.target.value;
+		});
+	</script>
+</body>
+</html>
